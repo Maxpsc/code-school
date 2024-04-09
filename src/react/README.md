@@ -1,0 +1,23 @@
+- React
+    - 数据不可变特性?
+    - 受控组件和非受控组件?
+    - React JSX 实质是?
+    - React 生命周期 (16.3、16.8 前后的变化 )?
+    - 组件间通信、Context 说明?
+    - React Hook
+      - 为啥使用?
+      - 限制条件是?
+      - 如何与组件生命周期关联?
+      - 常用 hook 使用说明?
+      - 同步变更和异步变更问题?
+      - setState 多次调用触发多次渲染?
+      - 在 React 中是如何被实现?
+    - React 常用的优化手段: React.memo、useMemo、useCallback、useImmer
+    - 触发 React 渲染的方法: state、props、context
+    - React 事件机制? 合成事件，为什么这么处理?
+    - React 异步渲染， Fiber 架构 ?
+    - React 并发模式渲染 (concurrent renderer )What ? Why ?
+    - React Diff 机制?
+    - React 渲染机制
+      - fn(state) ⇒ view 解释?
+      - 详细的渲染流程? jsx → render Funcrtion → VDom (仅记录子节点) — (reconciler) → Fiber — (commit「非全量」) → Dom
