@@ -4,20 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@tsconfig/node16": "^16.1.1",
-    "@types/node": "^20.10.5",
     "@types/react": "^18.2.74",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "less": "^4.6.4",
+    "typescript": "^5.3.3",
+    "vite": "^8.0.8"
   },
   "dependencies": {
-    "react": "^18.2.0"
+    "@vitejs/plugin-vue": "^6.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.14.0",
+    "vue": "^3.5.32"
   }
 }

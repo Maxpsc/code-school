@@ -141,7 +141,7 @@ export function skiingDP(heights: number[][]): number {
 /**
  * 示例使用
  */
-if (require.main === module) {
+{
   // 示例 1：经典 5x5 矩阵
   const heights1 = [
     [1, 2, 3, 4, 5],

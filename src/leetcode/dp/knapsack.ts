@@ -211,7 +211,7 @@ export function knapsackMultipleOptimized(
 /**
  * 示例使用
  */
-if (require.main === module) {
+{
   console.log('=== 0-1 背包问题 ===\n');
   
   const items01: Item[] = [
