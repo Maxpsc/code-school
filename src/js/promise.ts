@@ -83,6 +83,22 @@ class MyScheduler {
 		}
 	}
 }
+// 调用示例
+const scheduler = new MyScheduler(2)
+const delay = (ms: number, name: string) => () =>
+  new Promise(resolve => {
+    console.log(`${name} start`)
+    setTimeout(() => {
+      console.log(`${name} done`)
+      resolve(name)
+    }, ms)
+  })
+
+scheduler.add(delay(1000, 'task1'))
+scheduler.add(delay(500, 'task2'))
+scheduler.add(delay(300, 'task3'))
+scheduler.add(delay(200, 'task4'))
+// 并发限制为 2，task1、task2 先执行，task3、task4 排队
 
 
 
@@ -118,4 +134,67 @@ class MySchedulerV2 {
 		}
 	}
 
+}
+
+
+
+
+
+
+class Task {
+	limit = 0
+	queue = [] as any[]
+	current = 0
+	constructor(limit: number) {
+		this.limit = limit
+	}
+
+	add(task: () => Promise<any>) {
+		return new Promise((resolve, reject) => {
+			const runner = () => {
+				this.current += 1
+				task().then(resolve).catch(reject).finally(() => {
+					this.current -= 1
+					this.next()
+				})
+			}
+			if (this.current < this.limit) {
+				runner()
+			} else {
+				this.queue.push(runner)
+			}
+		})
+	}
+	next() {
+		if (this.current < this.limit && this.queue.length) {
+			const task = this.queue.shift()
+			task?.()
+		}
+	}
+}
+
+
+
+class Scheduler {
+	max = 0;
+	current = 0;
+	queue = []
+	constructor(max: number) {
+		this.max = max
+		this.current = 0
+		this.queue = []
+	}
+	add(task: () => Promise<any>) {
+		return new Promise((resolve, reject) => {
+			const runner = () => {
+				this.current += 1
+				task().then(resolve).catch(reject).finally(() => {
+					
+				})
+			}
+		})
+	}
+	next() {
+
+	}
 }

@@ -63,6 +63,16 @@ src/
 - `strict: true` - Full type checking
 - `isolatedModules: true` - ESM compliance
 
+## Interview Response Style
+
+When questions are in an interview context (algorithms, JS/React principles, system design):
+
+- **Lead with the core conclusion / approach** — give the answer first, then explain
+- **Keep explanations minimal** — shortest text that gets the point across
+- **No fluff** — skip background unless asked, skip comparisons unless relevant
+- **For algorithms**: state the key insight → complexity → code sketch
+- **For principles**: one-sentence definition → the "why" → a concrete example
+
 ## Development Notes
 
 - All algorithm code files are imported in main.tsx and execute on load

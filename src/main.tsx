@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 
 // 导入所有题目的代码（这些文件会打印到控制台）
 import './js/debounce-throttle.js'
+import './js/flat.ts'
 import './react/new-features.ts'
 import './react/hooks.ts'
 
